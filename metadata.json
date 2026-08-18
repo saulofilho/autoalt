@@ -2,5 +2,7 @@
   "name": "AutoAlt AI - Gerador de Texto ALT & Extensão Chrome",
   "description": "Plugin minimalista no estilo Apple: faça o upload da imagem e a IA gera e preenche o texto alternativo (ALT) acessível instantaneamente.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

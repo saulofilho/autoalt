@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppleDropzone } from './components/AppleDropzone';
 import { AppleAltResult } from './components/AppleAltResult';
 import { ExtensionModal } from './components/ExtensionModal';
+import { PublishToStoreModal } from './components/PublishToStoreModal';
 import { AltAnalysisResult, AltStyle } from './types';
 import {
   Sparkles,
@@ -11,6 +12,9 @@ import {
   CheckCircle2,
   HelpCircle,
   BookOpen,
+  Store,
+  Upload,
+  Download,
 } from 'lucide-react';
 import { ExtensionSimulator } from './components/ExtensionSimulator';
 
@@ -21,6 +25,7 @@ export default function App() {
   const [altResult, setAltResult] = useState<AltAnalysisResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isExtensionModalOpen, setIsExtensionModalOpen] = useState(false);
+  const [isPublishModalOpen, setIsPublishModalOpen] = useState(false);
   const [showLiveSimulator, setShowLiveSimulator] = useState(false);
 
   // Automatic Generation as soon as image is loaded
@@ -113,15 +118,25 @@ export default function App() {
           </div>
         </div>
 
-        {/* Top Right Action: Download Plugin */}
+        {/* Top Right Action: Download Plugin & Publish to Store */}
         <div className="flex items-center gap-2">
+          <button
+            id="btn-open-publish-modal"
+            onClick={() => setIsPublishModalOpen(true)}
+            className="px-3.5 py-1.5 rounded-xl bg-neutral-900 hover:bg-black text-white text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all active:scale-95"
+          >
+            <Chrome className="w-3.5 h-3.5 text-white" />
+            <span>Publicar na Store</span>
+          </button>
+
           <button
             id="btn-open-plugin-modal"
             onClick={() => setIsExtensionModalOpen(true)}
-            className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-neutral-50 text-neutral-800 text-xs font-medium border border-neutral-200/80 shadow-[0_1px_2px_rgba(0,0,0,0.04)] flex items-center gap-1.5 transition-all active:scale-95"
+            className="px-3 py-1.5 rounded-xl bg-white hover:bg-neutral-50 text-neutral-700 text-xs font-medium border border-neutral-200/80 shadow-[0_1px_2px_rgba(0,0,0,0.04)] flex items-center gap-1.5 transition-all active:scale-95"
           >
-            <Chrome className="w-3.5 h-3.5 text-neutral-700" />
-            <span>Plugin Chrome (.zip)</span>
+            <Download className="w-3.5 h-3.5 text-neutral-500" />
+            <span className="hidden sm:inline">Testar</span>
+            <span>.ZIP</span>
           </button>
         </div>
       </header>
@@ -216,6 +231,12 @@ export default function App() {
       <ExtensionModal
         isOpen={isExtensionModalOpen}
         onClose={() => setIsExtensionModalOpen(false)}
+      />
+
+      {/* Chrome Web Store Official Publish Modal */}
+      <PublishToStoreModal
+        isOpen={isPublishModalOpen}
+        onClose={() => setIsPublishModalOpen(false)}
       />
     </div>
   );
