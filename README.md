@@ -84,6 +84,17 @@ O aplicativo estará disponível em: `http://localhost:3000`
 
 ---
 
+## 🚀 Publicação no GitHub Pages
+
+O projeto já está configurado para deploy automático via **GitHub Actions**:
+
+1. Faça o push do código para o seu repositório no GitHub (`main` ou `master`).
+2. No GitHub, vá em **Settings** > **Pages** no seu repositório.
+3. Em **Build and deployment** > **Source**, selecione **GitHub Actions**.
+4. O workflow `.github/workflows/deploy.yml` será disparado automaticamente e publicará o site no link `https://seu-usuario.github.io/seu-repositorio/`.
+
+---
+
 ## 🌐 Publicação na Chrome Web Store
 
 Para publicar a extensão na loja oficial do Google:
