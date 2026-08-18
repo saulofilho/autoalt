@@ -105,8 +105,8 @@ export default function App() {
       {/* Apple Minimalist Top Header */}
       <header className="w-full max-w-2xl mx-auto px-4 pt-8 pb-4 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-neutral-900 text-white flex items-center justify-center shadow-xs">
-            <Sparkles className="w-4 h-4 text-white" />
+          <div className="w-9 h-9 rounded-xl overflow-hidden shadow-xs border border-neutral-200/60 bg-neutral-950 flex items-center justify-center">
+            <img src="/favicon.svg" alt="AutoAlt AI Avatar" className="w-full h-full object-cover" />
           </div>
           <div>
             <h1 className="text-sm font-semibold text-neutral-900 tracking-tight flex items-center gap-1.5">
